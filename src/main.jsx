@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import '@fontsource/pacifico'
+import '@fontsource/space-grotesk/700.css'
 import './index.css'
 import CalendarPage from './CalendarPage.jsx'
 
