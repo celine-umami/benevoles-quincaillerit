@@ -111,6 +111,11 @@ button.cal-day:hover {
   white-space: nowrap;
 }
 
+.cal-free {
+  background: #f0f0f0;
+  color: #666;
+}
+
 .cal-today {
   border-color: #d33;
   border-width: 2px;

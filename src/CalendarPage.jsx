@@ -120,11 +120,16 @@ export default function CalendarPage() {
               const content = (
                 <>
                   {k + 1}
-                  {ev && (
-                    <span className="cal-event">
-                      {ev.booked.length > 0 ? `${ev.booked.length} inscrit·e·s` : 'Libre'}
-                    </span>
-                  )}
+                  {ev &&
+                    (ev.booked.length > 0 ? (
+                      ev.booked.map((b) => (
+                        <span key={b.id} className="cal-event" title={b.name}>
+                          {b.name}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="cal-event cal-free">Libre</span>
+                    ))}
                 </>
               )
               return ev ? (
