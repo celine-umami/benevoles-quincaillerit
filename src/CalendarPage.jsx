@@ -85,9 +85,9 @@ export default function CalendarPage() {
         <button onClick={() => go(month - 1)} disabled={month === 0} aria-label="Mois précédent">
           ‹
         </button>
-        <h1>
+        <h2>
           {MONTHS[month].label} {MONTHS[month].year}
-        </h1>
+        </h2>
         <button
           onClick={() => go(month + 1)}
           disabled={month === MONTHS.length - 1}
