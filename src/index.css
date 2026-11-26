@@ -1,0 +1,239 @@
+:root {
+  --primary: rgb(127 168 114);
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.4;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60rem;
+  height: 100dvh;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.cal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cal-head h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.cal-weekdays,
+.cal-month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-weekdays {
+  margin: 0.5rem 0 0.25rem;
+  text-align: center;
+  color: #666;
+}
+
+.cal-track {
+  display: flex;
+  flex: 1;
+  min-height: 24rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.cal-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cal-month {
+  flex: 0 0 100%;
+  grid-template-rows: repeat(6, 1fr);
+  scroll-snap-align: start;
+}
+
+.cal-day {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.3rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+button.cal-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+}
+
+button.cal-day:hover {
+  border-color: var(--primary);
+}
+
+.cal-event {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #dfeedb;
+  color: #123;
+  padding: 1px 4px;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cal-today {
+  border-color: #d33;
+  border-width: 2px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.modal {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 32rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.modal h2 {
+  margin-top: 0;
+  padding-right: 2.5rem;
+}
+
+.modal h2::first-letter {
+  text-transform: uppercase;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  padding: 0.2rem 0.7rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  background: var(--primary);
+  color: #fff;
+}
+
+.bookings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bookings li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid #eee;
+  padding: 0.5rem 0;
+}
+
+.modal form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.modal input {
+  flex: 1 1 10rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+}
+
+.cancel-btn {
+  border: 1px solid #b00020;
+  border-radius: 6px;
+  background: #fff;
+  color: #b00020;
+  padding: 0.25rem 0.7rem;
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus-visible {
+  background: #b00020;
+  color: #fff;
+}
+
+.book-btn {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1.6rem;
+  font-weight: 500;
+}
+
+.book-btn:hover,
+.book-btn:focus-visible {
+  background: #fff;
+  color: var(--primary);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.muted {
+  color: #666;
+}
+
+.error {
+  color: #b00020;
+}
